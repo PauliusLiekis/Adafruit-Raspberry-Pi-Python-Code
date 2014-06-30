@@ -30,6 +30,9 @@ class PWM :
     self.i2c = Adafruit_I2C(address)
     self.address = address
     self.debug = debug
+    self.reset()
+    
+  def reset(self):
     if (self.debug):
       print "Reseting PCA9685"
     self.i2c.write8(self.__MODE1, 0x00)
